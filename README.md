@@ -9,12 +9,12 @@ The word *Pokemon* immediately invokes the inner child inside of an individual. 
 
 Research Question 1:
 ```bash
-If I graph every pokemon, do the nets stats change as generation changes?
+Can we identify patterns while looking at Attack, Defense, and Speeds?
 ```
 
 Research Question 2:
 ```bash
-If a new pokemon is found in the wild, can I classify whether it is a legendary pokemon or not?
+If a new Pokemon is found in the wild, can I classify whether it is a legendary pokemon or not?
 ```
 
 ## Usage
