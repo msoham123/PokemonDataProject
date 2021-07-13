@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 import seaborn as sns
+import scripts.scatterplot_matrix
 
 # Research Questions #
 
@@ -31,27 +32,33 @@ def power(row):
         return "strong"
 
 
-df["Power"] = df.apply(power, axis=1)
-print(df[["Name", "Power"]].head(5))
+scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
 
-plt.scatter(df["#"], df["Total"], linewidth=2.0)
-plt.xlabel("#")
-plt.ylabel("Total")
-plt.title("Total versus #")
-plt.show()
 
-fig, ax = plt.subplots()
-colors = {'weak': 'red', 'moderate': 'green', 'strong': 'blue'}
-grouped = df.groupby('Power')
+# df["Power"] = df.apply(power, axis=1)
+# print(df[["Name", "Power"]].head(5))
+#
+# plt.scatter(df["#"], df["Total"], linewidth=2.0)
+# plt.xlabel("#")
+# plt.ylabel("Total")
+# plt.title("Total versus #")
+# plt.show()
+#
+# fig, ax = plt.subplots()
+# colors = {'weak': 'red', 'moderate': 'green', 'strong': 'blue'}
+# grouped = df.groupby('Power')
+#
+# for key, group in grouped:
+#     group.plot(ax=ax, kind='scatter', x='Generation', y='Total', label=key, color=colors[key])
+#
+# ax.set_title('Total vs Generation')
+# plt.show()
+#
+# plt.hist([df["Power"]], bins=7, )
+# plt.show()
 
-for key, group in grouped:
-    group.plot(ax=ax, kind='scatter', x='Generation', y='Total', label=key, color=colors[key])
 
-ax.set_title('Total vs Generation')
-plt.show()
 
-plt.hist([df["Power"]], bins=7, )
-plt.show()
 
 # Pokemon Name Versus Attack Stat
 
