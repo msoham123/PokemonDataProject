@@ -1,37 +1,21 @@
 import pandas as pd
 import numpy as np
-from matplotlib import pyplot as plt
 import seaborn as sns
 import scripts.scatterplot_matrix
+import scripts.power_histogram
 
 # Part 1: Data Input #
 
 # Convert CSV to DataFrame for Pandas
 df = pd.read_csv("data/Pokemon.csv", engine="python")
 
-# print(df.head(4))
-
 
 # Part 2: Data Visualization #
+# Uncomment the following lines to regenerate plots
 
-WEAK_THRESHOLD = 200
-MOD_THRESHOLD = 400
+# scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
+scripts.power_histogram.create_power_histogram(df)
 
-
-def power(row):
-    if row["Total"] < WEAK_THRESHOLD:
-        return "weak"
-    elif row["Total"] < MOD_THRESHOLD:
-        return "moderate"
-    else:
-        return "strong"
-
-
-scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
-
-
-# df["Power"] = df.apply(power, axis=1)
-# print(df[["Name", "Power"]].head(5))
 #
 # plt.scatter(df["#"], df["Total"], linewidth=2.0)
 # plt.xlabel("#")
@@ -49,8 +33,7 @@ scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
 # ax.set_title('Total vs Generation')
 # plt.show()
 #
-# plt.hist([df["Power"]], bins=7, )
-# plt.show()
+
 
 
 
