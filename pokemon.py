@@ -4,11 +4,6 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import scripts.scatterplot_matrix
 
-# Research Questions #
-
-# Unsupervised: If I graph every pokemon, do the nets stats change as generation changes?
-# Supervised: If a new pokemon is found in the wild, can I classify whether it is a legendary pokemon or not?
-
 # Part 1: Data Input #
 
 # Convert CSV to DataFrame for Pandas
