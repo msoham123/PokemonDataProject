@@ -27,5 +27,5 @@ pip install matplotlib
 pip install numpy
 pip install seaborn
 
-python pokemon.py
+python runme.py
 ```
