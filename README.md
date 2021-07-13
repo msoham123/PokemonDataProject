@@ -26,6 +26,7 @@ pip install pandas
 pip install matplotlib
 pip install numpy
 pip install seaborn
+pip install sklearn
 
 python runme.py
 ```
