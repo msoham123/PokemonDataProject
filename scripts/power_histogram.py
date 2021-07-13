@@ -15,7 +15,7 @@ def power(row):
 
 
 def create_power_histogram(dataframe):
-    print("Generating power histogram....")
+    print("Generating power histogram...")
     dataframe["Power"] = dataframe.apply(power, axis=1)
     figure = plt.figure()
     plt.hist([dataframe["Power"]], bins=7, )
