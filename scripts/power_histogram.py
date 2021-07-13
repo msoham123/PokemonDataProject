@@ -19,5 +19,7 @@ def create_power_histogram(dataframe):
     dataframe["Power"] = dataframe.apply(power, axis=1)
     figure = plt.figure()
     plt.hist([dataframe["Power"]], bins=7, )
+    plt.xlabel("Power")
+    plt.title("Power Histogram")
     figure.savefig("plots/power_histogram.png", dpi=figure.dpi)
     print("Finished. Output saved to plots/power_histogram.png.")
