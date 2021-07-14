@@ -22,11 +22,6 @@ If a new Pokemon is found in the wild, can I classify whether it is a legendary 
 With a clone of the repo and python 3.7 installed, you can run this project by...
 
 ```python
-pip install pandas
-pip install matplotlib
-pip install numpy
-pip install seaborn
-pip install sklearn
-
+pip install pandas matplotlib numpy seaborn sklearn
 python runme.py
 ```
