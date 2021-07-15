@@ -10,7 +10,6 @@ import scripts.clusters
 # Convert CSV to DataFrame for Pandas
 df = pd.read_csv("data/Pokemon.csv", engine="python")
 
-
 # Part 2: Data Visualization #
 
 # Comment the following lines to not regenerate plots
@@ -29,6 +28,20 @@ df = pd.read_csv("data/Pokemon.csv", engine="python")
 df["Total Atk"] = df["Attack"] + df["Sp. Atk"]
 df["Total Def"] = df["Defense"] + df["Sp. Def"]
 
+types = ["Normal", "Fire", "Water", "Grass", "Electric",
+         "Ice", "Fighting", "Poison", "Ground", "Flying",
+         "Psychic", "Bug", "Rock", "Ghost", "Dark",
+         "Dragon", "Steel", "Fairy"]
+
+for index, row in df.iterrows():
+    for pokemon_type in types:
+        if row[2] == pokemon_type:
+            df.loc[index, pokemon_type] = 1
+        elif row[3] == pokemon_type:
+            df.loc[index, pokemon_type] = 1
+        else:
+            df.loc[index, pokemon_type] = 0
+
 # As a thought experiment, why don't we compare Total Atk and Total Def together?
 # Comment the following line to not regenerate plot
 # scripts.regression_plot.create_regression_plot(df, "Total Atk", "Total Def")
@@ -36,5 +49,8 @@ df["Total Def"] = df["Defense"] + df["Sp. Def"]
 
 # Part 4: Clustering #
 
-scripts.clusters.cluster_stats(5, df, "Total Atk", "Total Def", "Speed")
+feature_list = ["Total Atk", "Total Def", "Speed", "HP"] + types
 
+print(feature_list)
+
+scripts.clusters.cluster_stats(20, df, feature_list)
