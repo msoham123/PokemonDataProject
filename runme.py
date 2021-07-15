@@ -36,5 +36,5 @@ df["Total Def"] = df["Defense"] + df["Sp. Def"]
 
 # Part 4: Clustering #
 
-scripts.clusters.cluster_stats(df, 5, "Total Atk", "Total Def", "Speed")
+scripts.clusters.cluster_stats(5, df, "Total Atk", "Total Def", "Speed")
 
