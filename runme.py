@@ -46,11 +46,14 @@ for index, row in df.iterrows():
 # Comment the following line to not regenerate plot
 # scripts.regression_plot.create_regression_plot(df, "Total Atk", "Total Def")
 
-
 # Part 4: Clustering #
 
 feature_list = ["Total Atk", "Total Def", "Speed", "HP"] + types
 
-print(feature_list)
+# Comment the following line to not regenerate plot
+# scripts.clusters.cluster_stats(20, df, feature_list)
 
-scripts.clusters.cluster_stats(20, df, feature_list)
+scripts.clusters.cluster_comparison(2, df, feature_list)
+
+# Part 5: Supervised Learning #
+
