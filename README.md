@@ -9,7 +9,7 @@ The word *Pokemon* immediately invokes the inner child inside of an individual. 
 
 Research Question 1:
 ```bash
-Can we identify patterns while looking at Attack, Defense, and Speed?
+Can we identify patterns while looking at Attack, Defense, Speed, and the Type(s) that Pokemon have?
 ```
 
 Research Question 2:
