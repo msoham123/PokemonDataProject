@@ -3,6 +3,7 @@ import scripts.scatterplot_matrix
 import scripts.power_histogram
 import scripts.stats_scatterplot
 import scripts.regression_plot
+import scripts.clusters
 
 # Part 1: Data Input #
 
@@ -13,10 +14,10 @@ df = pd.read_csv("data/Pokemon.csv", engine="python")
 # Part 2: Data Visualization #
 
 # Comment the following lines to not regenerate plots
-scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
-scripts.power_histogram.create_power_histogram(df)
-scripts.stats_scatterplot.create_scatterplot(df, "Attack", "Sp. Atk")
-scripts.stats_scatterplot.create_scatterplot(df, "Defense", "Sp. Def")
+# scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
+# scripts.power_histogram.create_power_histogram(df)
+# scripts.stats_scatterplot.create_scatterplot(df, "Attack", "Sp. Atk")
+# scripts.stats_scatterplot.create_scatterplot(df, "Defense", "Sp. Def")
 
 
 # Part 3: Feature Engineering #
@@ -29,8 +30,11 @@ df["Total Atk"] = df["Attack"] + df["Sp. Atk"]
 df["Total Def"] = df["Defense"] + df["Sp. Def"]
 
 # As a thought experiment, why don't we compare Total Atk and Total Def together?
-scripts.regression_plot.create_regression_plot(df, "Total Atk", "Total Def")
+# Comment the following line to not regenerate plot
+# scripts.regression_plot.create_regression_plot(df, "Total Atk", "Total Def")
 
 
 # Part 4: Clustering #
+
+scripts.clusters.cluster_stats(df, 5, "Total Atk", "Total Def", "Speed")
 
