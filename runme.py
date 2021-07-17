@@ -14,10 +14,10 @@ df = pd.read_csv("data/Pokemon.csv", engine="python")
 # Part 2: Data Visualization #
 
 # Comment the following lines to not regenerate plots
-# scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
-# scripts.power_histogram.create_power_histogram(df)
-# scripts.stats_scatterplot.create_scatterplot(df, "Attack", "Sp. Atk")
-# scripts.stats_scatterplot.create_scatterplot(df, "Defense", "Sp. Def")
+scripts.scatterplot_matrix.create_scatterplot_matrix(df, "Legendary")
+scripts.power_histogram.create_power_histogram(df)
+scripts.stats_scatterplot.create_scatterplot(df, "Attack", "Sp. Atk")
+scripts.stats_scatterplot.create_scatterplot(df, "Defense", "Sp. Def")
 
 
 # Part 3: Feature Engineering #
@@ -47,14 +47,14 @@ feature_list = ["Total Atk", "Total Def", "Speed", "HP"] + types
 
 # As a thought experiment, why don't we compare Total Atk and Total Def together?
 # Comment the following line to not regenerate plot
-# scripts.regression_plot.create_regression_plot(df, "Total Atk", "Total Def")
+scripts.regression_plot.create_regression_plot(df, "Total Atk", "Total Def")
 
 # Part 4: Clustering #
 
 # Comment the following line to not regenerate plot
 # scripts.clusters.cluster_stats(20, df, feature_list)
 
-# scripts.clusters.cluster_comparison(2, df, feature_list)
+scripts.clusters.cluster_comparison(2, df, feature_list)
 
 # Part 5: Supervised Learning #
 
